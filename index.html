@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScrollInfinito</title>
     <style>
+        /*Formatação das imagens*/
         img{
             width: 25%;
             height: 25%;
@@ -22,13 +23,14 @@
 
 <body>
     
+    <!--div onde as novas imagens serão colocadas-->
     <div id="container"></div>
 
 </body>
 
 <script>
 
-    
+    //Banco de link de imagens, 15 ao total
     var imagens = ["https://c.wallhere.com/photos/05/a1/Overlord_anime_Ainz_Ooal_Gown-1152216.jpg!d",
     "https://i.pinimg.com/originals/eb/1f/d1/eb1fd12b2c5c2613c8ced34e2c091776.jpg",
     "https://c4.wallpaperflare.com/wallpaper/856/757/175/anime-overlord-ainz-ooal-gown-hd-wallpaper-preview.jpg",
@@ -44,7 +46,8 @@
     "https://images8.alphacoders.com/942/942011.png",
     "https://animesrubro.net/wp-content/uploads/2022/08/Overlord-4-Episodio-09-Online-_-Animesrubro.jpg",
     "https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2022/03/aizen-overlord-destacada.jpg?fit=774%2C489&quality=99&strip=all&ssl=1"];
-     
+    
+    //função de gerar imagens
     function gerar(numImages = 10){
         let i = 0;
         while(i < numImages){
@@ -57,9 +60,11 @@
         } 
     }
     gerar()
+
     window.addEventListener('scroll',()=>{
-        console.log("scrolled", window.scrollY) //scrolled from top
-        console.log(window.innerHeight) //visible part of screen
+        console.log("scrolled", window.scrollY)
+        console.log(window.innerHeight)
+        //Estrutura de decisão para continuar a reproduzir
         if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
             gerar();
         }
