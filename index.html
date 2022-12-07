@@ -44,29 +44,5 @@
 
 </body>
 
-<script>
-   
-    //função de gerar imagens
-    function gerar(numImages = 10){
-        let i = 0;
-        while(i < numImages){
-            const container = document.querySelector('div#container');
-            var random = Math.floor(Math.random() * 15);
-            const img =  document.createElement('img');
-            img.src = imagens[random]
-            container.appendChild(img)  
-            i++;
-        } 
-    }
-    gerar()
-
-    window.addEventListener('scroll',()=>{
-        console.log("scrolled", window.scrollY)
-        console.log(window.innerHeight)
-        //Estrutura de decisão para continuar a reproduzir
-        if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-            gerar();
-        }
-    })
- </script>
+<script src="script.js"></script>
 </html>
